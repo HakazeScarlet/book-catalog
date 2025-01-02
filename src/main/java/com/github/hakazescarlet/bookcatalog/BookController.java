@@ -1,14 +1,14 @@
 package com.github.hakazescarlet.bookcatalog;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BookController {
 
-    @GetMapping("/book-id")
-    public long getBookId(@RequestBody BookCreateUpdateCommand bookCreateUpdateCommand) {
-        return 111111111;
+    @PostMapping("/books")
+    public Long createBook(@RequestBody BookCreateUpdateCommand bookCreateUpdateCommand) {
+        return 111111111111L;
     }
 }

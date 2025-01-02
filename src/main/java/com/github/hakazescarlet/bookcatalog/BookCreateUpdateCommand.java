@@ -4,10 +4,10 @@ import java.time.LocalDate;
 
 public class BookCreateUpdateCommand {
 
-    String title;
-    String ISBN;
-    Author author;
-    LocalDate publicationDate;
+    private String title;
+    private String ISBN;
+    private Author author;
+    private LocalDate publicationDate;
 
     public String getTitle() {
         return title;

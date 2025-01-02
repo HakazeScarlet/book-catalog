@@ -2,10 +2,10 @@ package com.github.hakazescarlet.bookcatalog;
 
 public class Author {
 
-    String name;
-    String surname;
-    String alias;
-    String email;
+    private String name;
+    private String surname;
+    private String alias;
+    private String email;
 
     public String getName() {
         return name;
