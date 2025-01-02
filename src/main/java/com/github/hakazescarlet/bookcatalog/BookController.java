@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BookController {
 
-    @GetMapping("/getBookId")
+    @GetMapping("/book-id")
     public long getBookId(@RequestBody BookCreateUpdateCommand bookCreateUpdateCommand) {
         return 111111111;
     }
