@@ -8,7 +8,7 @@ public class BookDto {
 
     private Long id;
     private String title;
-    private String ISBN;
+    private String isbn;
     private Author author;
     private LocalDate publicationDate;
 
@@ -28,12 +28,12 @@ public class BookDto {
         this.title = title;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     public Author getAuthor() {
