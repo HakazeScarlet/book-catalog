@@ -1,4 +1,6 @@
-package com.github.hakazescarlet.bookcatalog;
+package com.github.hakazescarlet.bookcatalog.book;
+
+import com.github.hakazescarlet.bookcatalog.author.Author;
 
 import java.time.LocalDate;
 
