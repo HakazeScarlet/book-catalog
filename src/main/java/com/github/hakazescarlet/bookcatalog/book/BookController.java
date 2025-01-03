@@ -21,8 +21,8 @@ public class BookController {
         return new BookDto();
     }
 
-    @GetMapping("/books/author")
-    public List<AuthorReferences> getBookByAuthorId(@RequestParam Long authorId) {
+    @GetMapping("/books/author/{authorId}")
+    public List<AuthorReferences> getBookByAuthorId(@PathVariable Long authorId) {
         return new ArrayList<>();
     }
 
