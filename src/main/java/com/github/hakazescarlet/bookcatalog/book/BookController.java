@@ -1,5 +1,6 @@
 package com.github.hakazescarlet.bookcatalog.book;
 
+import com.github.hakazescarlet.bookcatalog.author.AuthorReferences;
 import org.apache.tomcat.util.http.fileupload.FileUploadBase;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,9 +21,14 @@ public class BookController {
         return new BookDto();
     }
 
+    @GetMapping("/books/author")
+    public List<AuthorReferences> getBookByAuthorId(@RequestParam Long authorId) {
+        return new ArrayList<>();
+    }
+
     @PostMapping("/books")
     public Long createBook(@RequestBody BookCreateUpdateCommand bookCreateUpdateCommand) {
-        return 111111111111L;
+        return 111L;
     }
 
     @PostMapping(value = "/books/{bookId}", consumes = FileUploadBase.MULTIPART_FORM_DATA)
