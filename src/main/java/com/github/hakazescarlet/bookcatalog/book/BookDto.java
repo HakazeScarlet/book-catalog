@@ -2,7 +2,7 @@ package com.github.hakazescarlet.bookcatalog.book;
 
 import com.github.hakazescarlet.bookcatalog.author.Author;
 
-public class BookDto extends BookSimpleDto{
+public class BookDto extends BookSimpleDto {
 
     private Author author;
 

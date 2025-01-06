@@ -32,7 +32,7 @@ public class BookController {
     }
 
     @PostMapping(value = "/books/{bookId}", consumes = FileUploadBase.MULTIPART_FORM_DATA)
-    public void createBookImage(@RequestParam("image") MultipartFile file, @PathVariable Long bookId) {
+    public void saveBookCover(@RequestParam("image") MultipartFile file, @PathVariable Long bookId) {
 
     }
 
