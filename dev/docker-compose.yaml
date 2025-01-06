@@ -1,0 +1,15 @@
+version: '17.2'
+
+services:
+  postgresql:
+    image: postgres
+    container_name: book-catalog
+    ports:
+      - "5436:5432"
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
+      - ./data/postgres:/var/lib/postgresql/book-catalog 777
+    environment:
+      - 'POSTGRES_DB=book_catalog'
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=admin'
