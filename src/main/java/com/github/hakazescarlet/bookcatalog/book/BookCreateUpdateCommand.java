@@ -1,14 +1,11 @@
 package com.github.hakazescarlet.bookcatalog.book;
 
-import com.github.hakazescarlet.bookcatalog.author.Author;
-
 import java.time.LocalDate;
 
 public class BookCreateUpdateCommand {
 
     private String title;
     private String isbn;
-    private Author author;
     private LocalDate publicationDate;
 
     public String getTitle() {
@@ -25,14 +22,6 @@ public class BookCreateUpdateCommand {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
-    }
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
     }
 
     public LocalDate getPublicationDate() {

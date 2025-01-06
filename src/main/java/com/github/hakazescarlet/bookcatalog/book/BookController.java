@@ -22,8 +22,8 @@ public class BookController {
     }
 
     @GetMapping("/books/author/{authorId}")
-    public List<AuthorReferences> getBookByAuthorId(@PathVariable Long authorId) {
-        return new ArrayList<>();
+    public AuthorReferences getBookByAuthorId(@PathVariable Long authorId) {
+        return new AuthorReferences();
     }
 
     @PostMapping("/books")
