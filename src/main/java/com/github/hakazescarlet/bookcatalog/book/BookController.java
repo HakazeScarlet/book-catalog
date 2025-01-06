@@ -33,6 +33,11 @@ public class BookController {
 
     @PostMapping(value = "/books/{bookId}", consumes = FileUploadBase.MULTIPART_FORM_DATA)
     public void createBookImage(@RequestParam("image") MultipartFile file, @PathVariable Long bookId) {
-        System.out.println();
+
+    }
+
+    @DeleteMapping("/books/{bookId}")
+    public void deleteBookById(@PathVariable Long bookId) {
+
     }
 }
