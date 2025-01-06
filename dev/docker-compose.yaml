@@ -1,8 +1,8 @@
-version: '17.2'
+version: '2.32.1'
 
 services:
   postgresql:
-    image: postgres
+    image: postgres:17.2
     container_name: pg-bc
     ports:
       - "5436:5432"
