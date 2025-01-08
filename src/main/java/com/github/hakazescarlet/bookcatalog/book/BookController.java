@@ -9,34 +9,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("/books")
 public class BookController {
 
-    @GetMapping("/books")
+    @GetMapping("/")
     public List<BookSimpleDto> getAllBooks() {
         return new ArrayList<>();
     }
 
-    @GetMapping("/books/{bookId}")
+    @GetMapping("/{bookId}")
     public BookDto getBookById(@PathVariable Long bookId) {
         return new BookDto();
     }
 
-    @GetMapping("/books/author/{authorId}")
+    @GetMapping("/author/{authorId}")
     public AuthorReferences getBookByAuthorId(@PathVariable Long authorId) {
         return new AuthorReferences();
     }
 
-    @PostMapping("/books")
+    @PostMapping("/")
     public Long createBook(@RequestBody BookCreateUpdateCommand bookCreateUpdateCommand) {
         return 111L;
     }
 
-    @PostMapping(value = "/books/{bookId}", consumes = FileUploadBase.MULTIPART_FORM_DATA)
+    @PostMapping(value = "/{bookId}", consumes = FileUploadBase.MULTIPART_FORM_DATA)
     public void saveBookCover(@RequestParam("image") MultipartFile file, @PathVariable Long bookId) {
 
     }
 
-    @DeleteMapping("/books/{bookId}")
+    @DeleteMapping("/{bookId}")
     public void deleteBookById(@PathVariable Long bookId) {
 
     }
