@@ -6,16 +6,18 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity(name = "books")
+@Entity
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @ManyToMany
     private List<Author> authors;
 
     private String title;
+
     private String isbn;
 
     private LocalDate publicationDate;

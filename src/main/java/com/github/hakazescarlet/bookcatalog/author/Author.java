@@ -12,12 +12,16 @@ public class Author {
 
     @Id
     private Long authorId;
+
     @ManyToMany
     private List<Book> books;
 
     private String firstName;
+
     private String lastName;
+
     private String alias;
+
     private String email;
 
     public String getFirstName() {
