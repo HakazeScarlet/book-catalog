@@ -41,7 +41,7 @@ public class BookController {
 
     @PostMapping(value = "/{bookId}", consumes = FileUploadBase.MULTIPART_FORM_DATA)
     public void saveBookCover(@RequestParam("file") MultipartFile file, @PathVariable Long bookId) {
-
+        bookService.saveBookCover(file, bookId);
     }
 
     @DeleteMapping("/{bookId}")

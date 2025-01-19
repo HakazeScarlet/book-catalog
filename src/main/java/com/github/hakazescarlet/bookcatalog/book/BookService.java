@@ -2,16 +2,20 @@ package com.github.hakazescarlet.bookcatalog.book;
 
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
 public class BookService {
 
     private final BookRepository bookRepository;
+    private final BookCoverRepository bookCoverRepository;
 
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository, BookCoverRepository bookCoverRepository) {
         this.bookRepository = bookRepository;
+        this.bookCoverRepository = bookCoverRepository;
     }
 
     public List<BookSimpleDto> getAll() {
@@ -49,5 +53,21 @@ public class BookService {
 
     public void deleteBookById(Long bookId) {
         bookRepository.deleteById(bookId);
+    }
+
+    public void saveBookCover(MultipartFile file, Long bookId) {
+        byte[] image = null;
+        try {
+            image = file.getBytes();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Book book = new Book();
+        book.setId(bookId);
+        BookCover bookCover = new BookCover();
+        bookCover.setImage(image);
+        bookCover.setBook(book);
+        // TODO: поискть как делать связь по ID, а не по объекту
+        bookCoverRepository.save(bookCover);
     }
 }
